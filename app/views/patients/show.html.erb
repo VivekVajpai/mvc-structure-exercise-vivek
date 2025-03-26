@@ -1,0 +1,13 @@
+<%= turbo_frame_tag :patient_details do %>
+  <div class="flex"><span class="font-bold">Name: </span><span> <%= @patient.fullname %></span></div>
+  <div class="flex"><span class="font-bold">Age: </span><span> <%= @patient.age %></span></div>
+  <div class="flex"><span class="font-bold">Phone: </span><span> <%= @patient.phone_number %></span></div>
+  <!-- <%#= turbo_stream.replace(dom_id(@patient, "id"), partial: "patients/patient", locals:{ post: @patient }) %> -->
+
+  <turbo-frame id="modal">
+    <%= link_to "New Appointment", new_departments_appointment_path, data: { turbo_frame: "modal" } %>
+  </turbo-frame>
+  <turbo-frame id="modal">
+    <%= link_to "New Admission", new_departments_admission_path, data: { turbo_frame: "modal" } %>
+  </turbo-frame>
+<% end %>

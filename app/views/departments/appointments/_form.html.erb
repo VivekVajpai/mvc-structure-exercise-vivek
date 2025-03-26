@@ -1,0 +1,11 @@
+<turbo-frame id="form_container">
+  <%= form_with model: appointment, data: { turbo: true } do |f| %>
+    <%= f.label :consultant %>
+    <%= f.text_field :consultant %>
+
+    <%= f.label :datetime, "Appointment Date & Time" %>
+    <%= f.datetime_local_field :datetime %>
+
+    <%= f.submit "Save" %>
+  <% end %>
+</turbo-frame>

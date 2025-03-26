@@ -1,13 +1,19 @@
-<h1>Patients</h1>
-<turbo-frame id="modal">
+<div class="grid grid-cols-2" data-controller="patient">
+  <div class="col-span-1">
+    <h1>Patients</h1>
+    <turbo-frame id="modal">
 
-  <%= link_to "New Patient", new_patient_path, data: { turbo_frame: "modal" } %>
+      <%= link_to "New Patient", new_patient_path, data: { turbo_frame: "modal" } %>
 
-</turbo-frame>
+    </turbo-frame>
 
+    <div id="patients_list">
+      <%= render @patients %>
+    </div>
 
-<div id="patients_list">
-  <%= render @patients %>
+    <turbo-frame id="modal"></turbo-frame>
+  </div>
+  <div class="col-span-1 ml-5">
+    <%= turbo_frame_tag :patient_details %>
+  </div>
 </div>
-
-<turbo-frame id="modal"></turbo-frame>
