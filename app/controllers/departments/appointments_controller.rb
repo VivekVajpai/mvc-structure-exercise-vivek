@@ -4,7 +4,7 @@ class Departments::AppointmentsController < ApplicationController
   end
 
   def new
-    @appointment = Appointment.new
+    @appointment = Departments::Appointment.new
     # render layout: "application" # Force default layout
   end
 
@@ -17,6 +17,6 @@ class Departments::AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:consultant, :datetime)
+    params.require(:departments_appointment).permit(:consultant, :datetime)
   end
 end

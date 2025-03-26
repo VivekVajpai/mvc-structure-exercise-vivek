@@ -4,7 +4,7 @@ class Departments::AdmissionsController < ApplicationController
   end
 
   def new
-    @admission = Admission.new
+    @admission = Departments::Admission.new
   end
 
   def create
@@ -16,6 +16,6 @@ class Departments::AdmissionsController < ApplicationController
   private
 
   def admission_params
-    params.require(:admission).permit(:consultant, :datetime)
+    params.require(:departments_admission).permit(:consultant, :datetime)
   end
 end
