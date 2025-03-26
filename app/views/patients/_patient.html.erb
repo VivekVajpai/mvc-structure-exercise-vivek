@@ -1,5 +1,7 @@
-<p>
-  <strong>Name:</strong> <%= patient.fullname %><br>
-  <strong>Age:</strong> <%= patient.age %><br>
-  <strong>Phone:</strong> <%= patient.phone_number %>
-</p>
+<%= link_to patient, "data-turbo-prefetch": false, "data-turbo-frame": :patient_details, class: "" do %>
+  <p>
+    <strong>Name:</strong> <%= patient.fullname %><br>
+    <strong>Age:</strong> <%= patient.age %><br>
+    <strong>Phone:</strong> <%= patient.phone_number %>
+  </p>
+<% end %>
